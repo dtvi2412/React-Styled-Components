@@ -41,9 +41,10 @@ import {
   GiRunningNinja,
 } from 'react-icons/gi';
 
-function Info() {
+function Info({ background }) {
   const [listImage, setListImage] = useState([]);
   const [itemmove, setitemmove] = useState(false);
+
   useEffect(() => {
     setListImage(dataImage);
   }, []);
@@ -67,29 +68,38 @@ function Info() {
   };
   return (
     <>
-      <WrapperInfo>
-        <WrapperInfoContent>
-          <Top>
-            <PortfolioText>PORTFOLIO</PortfolioText>
-            <TextInfo>Creative Design Agency</TextInfo>
-            <IconsSquar onClick={() => setitemmove(!itemmove)}>
-              <HiViewGrid style={{ fontSize: '2rem' }} />
+      <WrapperInfo background={background}>
+        <WrapperInfoContent background={background}>
+          <Top background={background}>
+            <PortfolioText background={background}>PORTFOLIO</PortfolioText>
+            <TextInfo background={background}>Creative Design Agency</TextInfo>
+            <IconsSquar
+              background={background}
+              onClick={() => setitemmove(!itemmove)}
+            >
+              <HiViewGrid
+                style={{
+                  fontSize: '2rem',
+                }}
+              />
             </IconsSquar>
           </Top>
 
           <ItemInfo itemmove={itemmove}>{renderImageItem()}</ItemInfo>
           <AboutText>
-            <AboutP>
+            <AboutP background={background}>
               Over 10 years of combined experience, and know a thing or two
               about designing websites and mobile apps.
             </AboutP>
           </AboutText>
           <AboutOffice>
             <ItemOffice>
-              <ItemOfficeIcon>
+              <ItemOfficeIcon background={background}>
                 <GiCrossbow />
               </ItemOfficeIcon>
-              <ItemOfficeName>Web Development</ItemOfficeName>
+              <ItemOfficeName background={background}>
+                Web Development
+              </ItemOfficeName>
               <ItemOfficeDescription>
                 {' '}
                 Web development is a broad term for the work involved in
@@ -97,20 +107,24 @@ function Info() {
               </ItemOfficeDescription>
             </ItemOffice>
             <ItemOffice>
-              <ItemOfficeIcon>
+              <ItemOfficeIcon background={background}>
                 <GiRunningNinja />
               </ItemOfficeIcon>
-              <ItemOfficeName>Web & UI/UX Design</ItemOfficeName>
+              <ItemOfficeName background={background}>
+                Web & UI/UX Design
+              </ItemOfficeName>
               <ItemOfficeDescription>
                 Web design encompasses many different skills and disciplines in
                 the production of all web.
               </ItemOfficeDescription>
             </ItemOffice>
             <ItemOffice>
-              <ItemOfficeIcon>
+              <ItemOfficeIcon background={background}>
                 <GiBank />
               </ItemOfficeIcon>
-              <ItemOfficeName>SEO & Marketing</ItemOfficeName>
+              <ItemOfficeName background={background}>
+                SEO & Marketing
+              </ItemOfficeName>
               <ItemOfficeDescription>
                 A process of affecting the visibility of a website or a web page
                 in a web search engine's unpaid results.

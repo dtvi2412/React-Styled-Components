@@ -12,9 +12,8 @@ import {
 } from './Navbar.element';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import { IconContext } from 'react-icons/lib';
-function Navbar() {
-  const [background, setBackground] = useState(true);
 
+function Navbar({ hdbackground, background }) {
   const [click, setClick] = useState(false);
 
   const [button, setButton] = useState(true);
@@ -30,15 +29,22 @@ function Navbar() {
   useEffect(() => {
     showButton();
   }, []);
-
   window.addEventListener('resize', showButton);
 
   const handleClick = () => setClick(!click);
+
+  const handleSetBackground = () => {
+    hdbackground();
+  };
   return (
     <>
-      <IconContext.Provider value={{ color: '#fff' }}>
+      <IconContext.Provider
+        value={{ color: `${background ? '#fff' : '#111'}` }}
+      >
         <Wrapper background={background}>
-          <Logo onClick={() => setBackground(!background)}>DTV</Logo>
+          <Logo background={background} onClick={() => handleSetBackground()}>
+            DTV
+          </Logo>
           <Nav>
             <MoblieIcon onClick={handleClick}>
               {click ? <FaTimes /> : <FaBars />}
@@ -48,9 +54,9 @@ function Navbar() {
               onClick={handleClick}
               click={click}
             >
-              <List>Home</List>
-              <List>About</List>
-              <List>Contact</List>
+              <List background={background}>Home</List>
+              <List background={background}>About</List>
+              <List background={background}>Contact</List>
               <NavItemBtn>
                 {button ? (
                   <NavBtnLink>

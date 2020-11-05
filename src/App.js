@@ -55,10 +55,22 @@ function App() {
     }
     window.addEventListener("scroll",handleScroll)
   },[])
+
+  const initBackground =
+  JSON.parse(localStorage.getItem('background')) || false;
+
+  const [background, setBackground] = useState(initBackground);
+
+  localStorage.setItem('background', background);
+
+  const handleClickBackground = () => {
+    setBackground(!background);
+  }
   return (
-    <div className="App">
-      <Navbar/>
-      <Info/>
+    // style={{background:`${background ? '#101522' : '#00e8bf' }`}}
+    <div className="App" >
+      <Navbar background={background} hdbackground={handleClickBackground}/>
+      <Info background={background}/>
       {backToTop &&      
         <BackToTop onClick={()=>window.scrollTo({
           top:0,

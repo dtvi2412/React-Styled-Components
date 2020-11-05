@@ -8,7 +8,7 @@ export const Image = styled.img`
 export const TextInfo = styled.h1`
   text-align: center;
   height: 30vh;
-  color: #111;
+  /* color: #111; */
 
   display: flex;
   justify-content: center;
@@ -21,8 +21,27 @@ export const TextInfo = styled.h1`
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 1000;
+
+  color: ${({ background }) => (background ? '#901b12' : '#111')};
+  transform: ${({ background }) =>
+    background ? 'translate(-50%,-30%)' : 'translate(-50%,-50%)'};
   @media only screen and (max-width: 960px) {
     font-size: 1.5rem;
+
+    transform: ${({ background }) =>
+      background ? 'translate(-50%,-20%)' : 'translate(-50%,-50%)'};
+  }
+  @media only screen and (max-width: 760px) {
+    font-size: 1.2rem;
+
+    transform: ${({ background }) =>
+      background ? 'translate(-50%,-35%) ' : 'translate(-50%,-50%)'};
+  }
+  @media only screen and (max-width: 420px) {
+    font-size: 0.8rem;
+
+    transform: ${({ background }) =>
+      background ? 'translate(-50%,-35%) ' : 'translate(-50%,-50%)'};
   }
 `;
 export const PortfolioText = styled.h1`
@@ -34,6 +53,8 @@ export const PortfolioText = styled.h1`
   z-index: 999;
 
   font-size: 10rem;
+
+  /* color: ${({ background }) => (background ? '#fff' : '#f7f7f7')}; */
   @media only screen and (max-width: 960px) {
     font-size: 7rem;
   }
@@ -47,7 +68,7 @@ export const PortfolioText = styled.h1`
 export const WrapperInfo = styled.div`
   width: 100%;
   height: 100%;
-  background-color: #00e8bf;
+  background-color: ${({ background }) => (background ? '#101522' : '#00e8bf')};
   overflow: hidden;
 `;
 
@@ -127,6 +148,8 @@ export const WrapperInfoContent = styled.div`
   display: flex;
   flex-direction: column;
   position: relative;
+
+  background-color: ${({ background }) => (background ? '#101522' : '#fff')};
 `;
 export const Top = styled.div`
   display: flex;
@@ -140,6 +163,8 @@ export const Top = styled.div`
   position: relative;
 
   overflow: hidden;
+
+  background-color: ${({ background }) => (background ? '#101522' : '#fff')};
 
   @media only screen and (max-width: 960px) {
     padding: 150px 0;
@@ -156,6 +181,7 @@ export const IconsSquar = styled.div`
   z-index: 1001;
   transition: all linear 0.5s;
   cursor: pointer;
+  color: ${({ background }) => (background ? '#fff' : '#111')};
   &:hover {
     color: orangered;
   }
@@ -165,10 +191,11 @@ export const AboutText = styled.div`
   padding: 100px 0;
 `;
 export const AboutP = styled.p`
-  color: #111;
+  /* color: #111; */
   font-size: 1.7rem;
   text-align: center;
 
+  color: ${({ background }) => (background ? '#fff' : '#111')};
   @media only screen and (max-width: 760px) {
     font-size: 1.2rem;
   }
@@ -189,6 +216,7 @@ export const AboutOffice = styled.div`
 export const ItemOffice = styled.div`
   text-align: center;
   width: 33.33%;
+
   @media only screen and (max-width: 960px) {
     width: 50%;
     margin: 10px 0;
@@ -200,6 +228,7 @@ export const ItemOffice = styled.div`
 `;
 export const ItemOfficeName = styled.h1`
   font-size: 1.2rem;
+  color: ${({ background }) => (background ? '#fff' : '#111')};
 `;
 export const ItemOfficeDescription = styled.p`
   font-size: 1rem;
@@ -208,6 +237,8 @@ export const ItemOfficeDescription = styled.p`
 export const ItemOfficeIcon = styled.div`
   font-size: 4rem;
   color: #00ddb6;
+
+  color: ${({ background }) => (background ? '#901b12' : '#00ddb6')};
 `;
 
 export const ButtonContactUs = styled.button`
@@ -266,6 +297,7 @@ export const NameFooter = styled.h1`
   color: #fff;
   font-size: 2rem;
   text-align: center;
+  cursor: pointer;
   @media only screen and (max-width: 460px) {
     font-size: 1.3rem;
   }
@@ -273,7 +305,7 @@ export const NameFooter = styled.h1`
 export const DesFooter = styled.p`
   font-size: 1.2rem;
   color: #8e8e8e;
-
+  cursor: pointer;
   @media only screen and (max-width: 460px) {
     font-size: 1rem;
     text-align: center;

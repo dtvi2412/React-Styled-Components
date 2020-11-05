@@ -12,6 +12,7 @@ export const Wrapper = styled.section`
 export const Logo = styled.div`
   color: #fff;
   font-size: 2rem;
+  color: ${({ background }) => (background ? '#fff' : '#111')};
   &:hover {
     cursor: pointer;
   }
@@ -50,6 +51,7 @@ export const List = styled.a`
   padding: 0 10px;
   /* color: ${(props) => (props.background ? '#111;' : '#fff')}; */
 
+  color: ${({ background }) => (background ? '#fff' : '#111')};
   border-bottom: 2px solid transparent;
   &:hover {
     color: orangered;
@@ -70,6 +72,7 @@ export const MoblieIcon = styled.div`
 
   @media only screen and (max-width: 960px) {
     display: block;
+    color: ${({ background }) => (background ? '#fff' : '#111')};
 
     position: absolute;
     top: 0;
