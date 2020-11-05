@@ -4,7 +4,7 @@ import styled from 'styled-components';
 export const Wrapper = styled.section`
   padding: 30px 0;
   background-color: black;
-  background-color: ${(props) => (props.background ? '#101522;' : '#7f7f96')};
+  background-color: ${(props) => (props.background ? '#101522;' : '#00e8bf')};
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -33,20 +33,22 @@ export const NavList = styled.ul`
     align-items: center;
     width: 100%;
     height: 90vh;
+
     position: absolute;
     top: 100px;
     left: ${(props) => (props.click ? 0 : '-100%')};
     opacity: 1;
     transition: all 0.5s ease;
-    background: ${({ background }) => (background ? '#101522' : '#7f7f96')};
+    background: ${({ background }) => (background ? '#101522' : '#00e8bf')};
 
-    z-index: 1000;
+    z-index: 10000;
   }
 `;
 export const List = styled.a`
   text-decoration: none;
   color: #fff;
   padding: 0 10px;
+  /* color: ${(props) => (props.background ? '#111;' : '#fff')}; */
 
   border-bottom: 2px solid transparent;
   &:hover {
